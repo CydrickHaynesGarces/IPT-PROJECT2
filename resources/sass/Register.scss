@@ -1,0 +1,107 @@
+// Define color variables
+$primary-color: #2a9d8f; // Teal
+$secondary-color: #e9c46a; // Yellow
+$text-color: #333;
+$background-color: #f0f8ff; // Light blue
+$form-background: #ffffff; // White form background
+
+// Body styles for the Register page
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, $background-color, lighten($background-color, 20%)); // Smooth background gradient
+    height: 100vh; // Full height viewport
+    display: flex;
+    justify-content: center; // Center form horizontally
+    align-items: center; // Center form vertically
+    margin: 0;
+}
+
+// Container for register form
+.register-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: $form-background;
+    border: 1px solid $secondary-color;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); // Add shadow for depth
+    transition: transform 0.3s; // Smooth scaling transition
+
+    &:hover {
+        transform: scale(1.02); // Slightly enlarge on hover
+    }
+}
+
+// Header styles
+h1 {
+    color: $primary-color;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+// Label styling
+label {
+    display: block;
+    margin: 15px 0 5px;
+    color: $text-color;
+    font-weight: bold;
+}
+
+// Input styling for username, email, and password fields
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid $secondary-color;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        border-color: $primary-color;
+        outline: none; // Remove the default outline on focus
+    }
+}
+
+// Button styling
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+
+    &:hover {
+        background-color: darken($primary-color, 10%); // Darken button on hover
+        transform: translateY(-2px); // Raise button slightly
+    }
+
+    &:active {
+        transform: translateY(0); // Reset transform on click
+        background-color: lighten($primary-color, 5%); // Lighten button color on click
+    }
+}
+
+// Success message styling
+.success-message {
+    color: green;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+// Error message styling
+.error-message {
+    color: red;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}

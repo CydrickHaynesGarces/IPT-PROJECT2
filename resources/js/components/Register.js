@@ -1,5 +1,6 @@
 // resources/js/components/Register.js
 import React, { useState } from 'react';
+require('../../sass/Register.scss');
 
 export default function Register() {
     const [formData, setFormData] = useState({

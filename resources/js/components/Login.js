@@ -1,5 +1,7 @@
 // resources/js/components/Login.js
+import '../../sass/Login.scss';
 import React, { useState } from 'react';
+
 
 export default function Login() {
     const [email, setEmail] = useState('');
