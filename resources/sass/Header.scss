@@ -1,62 +1,90 @@
-/* resources/sass/Header.scss */
 .header {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('https://www.greatschools.org/gk/wp-content/uploads/2014/03/The-school-visit-what-to-look-for-what-to-ask-1-750x325.jpg');
-    background-size: cover;
-    background-position: center;
+    background: rgba(0, 0, 0, 1); /* Initial background color */
     color: white;
-    padding: 20px 0; /* Adjust padding to top and bottom */
-    width: 100vw; /* Full viewport width */
+    padding: 20px 0; 
+    width: 100vw; 
     position: sticky;
     top: 0;
     z-index: 1000;
-    
-    left: 0; /* Align to the left edge */
-    right: 0; /* Align to the right edge */
+    left: 0; 
+    right: 0; 
+    transition: background-color 0.5s ease, transform 0.3s ease; /* Transition for background color and transform */
+
+    &:hover {
+        transform: translateY(-2px); /* Slight lift on hover */
+    }
 
     .header-content {
         display: flex;
         align-items: center;
-        justify-content: space-between; /* Space text and social links apart */
+        justify-content: space-between; 
         width: 100%;
         padding: 0 20px;
 
         .header-text {
-            flex: 1; /* Allow text to take available space */
-            
+            flex: 1; 
+
             h1 {
                 font-size: 2.5rem;
                 margin: 0;
+                transition: color 0.3s; /* Transition for color change */
+                
+                &:hover {
+                    color: #f1c40f; /* Gold color on hover */
+                }
             }
 
             p {
                 font-size: 1.2rem;
                 margin: 5px 0;
+                transition: transform 0.3s; /* Transition for transform */
+                
+                &:hover {
+                    transform: scale(1.05); /* Slight zoom effect on hover */
+                }
             }
         }
 
-        /* Style for social media links on the right */
         .social-media-links {
             display: flex;
             align-items: center;
 
             ul {
                 display: flex;
-                list-style-type: none; /* Remove list styling */
+                list-style-type: none; 
                 margin: 0;
                 padding: 0;
 
                 li {
-                    margin-left: 15px; /* Space between social media links */
-                    
+                    margin-left: 15px; 
+                    position: relative; /* For animation effect */
+
                     a {
                         color: white;
                         text-decoration: none;
                         font-size: 1.2rem;
-                        transition: color 0.3s;
+                        transition: color 0.3s, transform 0.3s; /* Transition for color and transform */
 
                         &:hover {
-                            color: #f1c40f; /* Optional: change color on hover */
+                            color: #f1c40f; 
+                            transform: translateY(-3px); /* Lift effect on hover */
+                        }
+
+                        /* Adding a small animation on hover */
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            background: #f1c40f;
+                            left: 0;
+                            bottom: -5px;
+                            transform: scaleX(0); /* Start hidden */
+                            transition: transform 0.3s ease;
+                        }
+
+                        &:hover::after {
+                            transform: scaleX(1); /* Show underline on hover */
                         }
                     }
                 }

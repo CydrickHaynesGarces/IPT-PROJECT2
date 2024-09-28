@@ -89,7 +89,7 @@
     margin: 0;
     display: flex;
     justify-content: space-around;
-    background-color: black;
+    background-color: white; /* Changed to white */
     position: fixed;
     top: 0;
     left: 0;
@@ -102,18 +102,18 @@
         
         a {
             text-decoration: none;
-            color: white;
+            color: black; /* Change text color to black for better contrast */
             transition: color 0.3s;
 
             &:hover {
-                background-color: white;
-                color: black;
+                background-color: #f0f0f0; /* Light gray on hover */
+                color: #2c3e50; /* Darker text color on hover */
             }
         }
 
         &.active a {
-            background-color: white;
-            color: black;
+            background-color: #f0f0f0; /* Light gray for active link */
+            color: #2c3e50; /* Darker text color for active link */
             font-weight: bold;
             text-decoration: underline;
         }

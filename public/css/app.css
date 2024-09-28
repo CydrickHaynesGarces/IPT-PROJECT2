@@ -12052,7 +12052,7 @@ textarea.form-control-lg {
   margin: 0;
   display: flex;
   justify-content: space-around;
-  background-color: black;
+  background-color: white; /* Changed to white */
   position: fixed;
   top: 0;
   left: 0;
@@ -12065,16 +12065,16 @@ textarea.form-control-lg {
 }
 .nav-list li a {
   text-decoration: none;
-  color: white;
+  color: black; /* Change text color to black for better contrast */
   transition: color 0.3s;
 }
 .nav-list li a:hover {
-  background-color: white;
-  color: black;
+  background-color: #f0f0f0; /* Light gray on hover */
+  color: #2c3e50; /* Darker text color on hover */
 }
 .nav-list li.active a {
-  background-color: white;
-  color: black;
+  background-color: #f0f0f0; /* Light gray for active link */
+  color: #2c3e50; /* Darker text color for active link */
   font-weight: bold;
   text-decoration: underline;
 }
@@ -12362,12 +12362,12 @@ body {
   margin: 0; /* Remove default margin */
   display: flex; /* Use flexbox for horizontal layout */
   justify-content: flex-start; /* Align items to the left */
-  /* Add a transition for smooth effect */
   transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background and shadow */
+  /* Change styles when hovered over */
   /* Change styles when scrolled */
 }
 .nav-list li {
-  margin: 0 10px; /* Adjust horizontal margin between links (reduce spacing) */
+  margin: 0 10px; /* Adjust horizontal margin between links */
 }
 .nav-list li a {
   text-decoration: none; /* Remove underline from links */
@@ -12378,16 +12378,23 @@ body {
   transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* Transition for hover effect */
 }
 .nav-list li a:hover {
-  color: #000; /* Change text color to black on hover */
+  color: black; /* Change text color to black on hover */
   background-color: white; /* Change background to white on hover */
   border-color: white; /* Keep border white on hover */
 }
 .nav-list li.active a {
   background-color: white; /* Set active link background to white */
-  color: #000; /* Change text color to black */
+  color: black; /* Change text color to black */
   font-weight: bold; /* Optional: Make the active link bold */
   text-decoration: underline; /* Optional: Add underline to active link */
   border-color: transparent; /* Remove border color for active state */
+}
+.nav-list:hover {
+  background-color: black; /* Set background to black when hovered */
+}
+.nav-list:hover a {
+  color: white; /* Change text color to white on hover */
+  border-color: white; /* Keep border white on hover */
 }
 .nav-list.scrolled {
   background-color: #000; /* Keep background black when scrolled */
