@@ -1,4 +1,3 @@
-// resources/js/components/Login.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../sass/Login.scss';
@@ -14,34 +13,33 @@ export default function Login() {
 
     return (
         <div className="login">
-            <h1>Login</h1>
+            <h1>Sign in</h1>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
+                <div className="input-container">
                     <input 
                         type="email" 
+                        placeholder="Email" 
                         value={email} 
                         onChange={(e) => setEmail(e.target.value)} 
                         required 
                     />
                 </div>
-                <div>
-                    <label>Password:</label>
+                <div className="input-container">
                     <input 
                         type="password" 
+                        placeholder="Password" 
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)} 
                         required 
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">Sign in</button>
             </form>
 
             <div className="auth-links">
                 <p>Don't have an account? <Link to="/register">Register</Link></p>
             </div>
 
-            {/* Back to Home link */}
             <div>
                 <Link to="/">Back to Home</Link>
             </div>

@@ -10465,7 +10465,6 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
-// resources/js/components/Login.js
 
 
 
@@ -10486,34 +10485,34 @@ function Login() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "login",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-      children: "Login"
+      children: "Sign in"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       onSubmit: handleSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Email:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "input-container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "email",
+          placeholder: "Email",
           value: email,
           onChange: function onChange(e) {
             return setEmail(e.target.value);
           },
           required: true
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          children: "Password:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "input-container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "password",
+          placeholder: "Password",
           value: password,
           onChange: function onChange(e) {
             return setPassword(e.target.value);
           },
           required: true
-        })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "submit",
-        children: "Login"
+        children: "Sign in"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "auth-links",
@@ -15424,7 +15423,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Resetting global styles */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Arial\", sans-serif;\n  background-color: #f9f9f9;\n  color: #343a40;\n}\n\n/* Main login container */\n.login {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 40px 20px;\n  background-color: #ffffff;\n  border-radius: 10px;\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n  max-width: 800px;\n  margin: 20px auto;\n  animation: fadeIn 0.5s ease;\n}\n.login h1 {\n  font-size: 2.5rem;\n  color: #333;\n  margin-bottom: 20px;\n  text-align: center;\n  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.3s;\n}\n.login p {\n  font-size: 1.125rem;\n  color: #666;\n  line-height: 1.6;\n  margin-bottom: 20px;\n  max-width: 800px;\n  margin: 0 auto;\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.6s;\n}\n.login button {\n  padding: 10px 20px;\n  border: none;\n  border-radius: 5px;\n  background-color: #e67e22;\n  color: white;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.9s;\n}\n.login button:hover {\n  background-color: #d35400;\n}\n.login button:focus {\n  outline: none;\n  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);\n}\n\n/* Keyframe animations */\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n/* Responsive styles */\n@media (max-width: 600px) {\n  .login {\n    padding: 20px 10px;\n  }\n  .login h1 {\n    font-size: 2rem;\n  }\n  .login p {\n    font-size: 1rem;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Resetting global styles */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Roboto\", sans-serif;\n  background-color: #f5f5f5;\n  color: #202124;\n}\n\n/* Main login container */\n.login {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 40px;\n  background-color: #fff;\n  border-radius: 8px;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n  max-width: 400px;\n  margin: 100px auto;\n}\n.login h1 {\n  font-size: 24px;\n  margin-bottom: 20px;\n  text-align: center;\n}\n.login .input-container {\n  width: 100%;\n  margin-bottom: 16px;\n}\n.login .input-container input {\n  width: 100%;\n  padding: 10px;\n  border: 1px solid #dadce0;\n  border-radius: 4px;\n  font-size: 16px;\n}\n.login .input-container input:focus {\n  border-color: #4285f4;\n  outline: none;\n  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);\n}\n.login button {\n  padding: 10px;\n  border: none;\n  border-radius: 4px;\n  background-color: #4285f4;\n  color: white;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.3s;\n}\n.login button:hover {\n  background-color: #357ae8;\n}\n.login .auth-links {\n  margin-top: 20px;\n  text-align: center;\n  font-size: 14px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

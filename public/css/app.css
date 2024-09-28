@@ -12148,9 +12148,9 @@ textarea.form-control-lg {
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: #f9f9f9;
-  color: #343a40;
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+  color: #202124;
 }
 
 /* Main login container */
@@ -12158,85 +12158,54 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 20px auto;
-  animation: fadeIn 0.5s ease;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 100px auto;
 }
 .login h1, .login .h1 {
-  font-size: 2.5rem;
-  color: #333;
+  font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards 0.3s;
 }
-.login p {
-  font-size: 1.125rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards 0.6s;
+.login .input-container {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.login .input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.login .input-container input:focus {
+  border-color: #4285f4;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
 }
 .login button {
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
-  background-color: #e67e22;
+  border-radius: 4px;
+  background-color: #4285f4;
   color: white;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards 0.9s;
 }
 .login button:hover {
-  background-color: #d35400;
+  background-color: #357ae8;
 }
-.login button:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+.login .auth-links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
 }
 
-/* Keyframe animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Responsive styles */
-@media (max-width: 600px) {
-  .login {
-    padding: 20px 10px;
-  }
-  .login h1, .login .h1 {
-    font-size: 2rem;
-  }
-  .login p {
-    font-size: 1rem;
-  }
-}
 /* Resetting global styles */
 * {
   margin: 0;
