@@ -1,0 +1,27 @@
+/* resources/sass/SocialMediaLinks.scss */
+.social-media-links {
+    display: flex;
+    align-items: center;
+
+    ul {
+        display: flex;
+        list-style-type: none; /* Remove default list styling */
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-left: 15px; /* Space between social media links */
+            
+            a {
+                color: white; /* Link color */
+                text-decoration: none; /* Remove underline */
+                font-size: 1.2rem; /* Font size for links */
+                transition: color 0.3s; /* Transition for hover effect */
+
+                &:hover {
+                    color: #f1c40f; /* Change color on hover */
+                }
+            }
+        }
+    }
+}

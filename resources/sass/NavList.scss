@@ -1,0 +1,49 @@
+.nav-list {
+    position: sticky; /* Make the nav sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure it appears above other content */
+    background-color: #000; /* Set background to black */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+    
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: flex-start; /* Align items to the left */
+
+    /* Add a transition for smooth effect */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background and shadow */
+
+    li {
+        margin: 0 10px; /* Adjust horizontal margin between links (reduce spacing) */
+        
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: white; /* Change link color to white */
+            border: 2px solid white; /* White border for outline */
+            padding: 10px 20px; /* Add padding for button-like appearance */
+            border-radius: 5px; /* Rounded corners */
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* Transition for hover effect */
+
+            &:hover {
+                color: #000; /* Change text color to black on hover */
+                background-color: white; /* Change background to white on hover */
+                border-color: white; /* Keep border white on hover */
+            }
+        }
+
+        &.active a {
+            background-color: white; /* Set active link background to white */
+            color: #000; /* Change text color to black */
+            font-weight: bold; /* Optional: Make the active link bold */
+            text-decoration: underline; /* Optional: Add underline to active link */
+            border-color: transparent; /* Remove border color for active state */
+        }
+    }
+
+    /* Change styles when scrolled */
+    &.scrolled {
+        background-color: #000; /* Keep background black when scrolled */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow when scrolled */
+    }
+}

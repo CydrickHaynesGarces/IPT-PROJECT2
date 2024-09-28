@@ -1,107 +1,126 @@
-// Define color variables
-$primary-color: #2a9d8f; // Teal
-$secondary-color: #e9c46a; // Yellow
-$text-color: #333;
-$background-color: #f0f8ff; // Light blue
-$form-background: #ffffff; // White form background
-
-// Body styles for the Register page
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, $background-color, lighten($background-color, 20%)); // Smooth background gradient
-    height: 100vh; // Full height viewport
-    display: flex;
-    justify-content: center; // Center form horizontally
-    align-items: center; // Center form vertically
+/* Resetting global styles */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Container for register form
-.register-container {
-    max-width: 400px;
-    width: 100%;
-    padding: 30px;
-    background-color: $form-background;
-    border: 1px solid $secondary-color;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); // Add shadow for depth
-    transition: transform 0.3s; // Smooth scaling transition
+body {
+    font-family: 'Arial', sans-serif; // Match font family to DefaultPage
+    background-color: #f9f9f9; // Use the same light gray background
+    color: #343a40; // Keep text color consistent
+}
 
-    &:hover {
-        transform: scale(1.02); // Slightly enlarge on hover
+/* Main registration container */
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: flex-start; // Change to flex-start for consistent vertical alignment
+    padding: 40px 20px; // Match padding from DefaultPage
+    background-color: #ffffff; // White background for content area
+    border-radius: 10px; // Rounded corners
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Deeper shadow for depth
+    max-width: 800px; // Set a max-width for the content area
+    margin: 20px auto; // Center align and add margin around the content
+    animation: fadeIn 0.5s ease; // Animation for fading in
+
+    h1 {
+        font-size: 2.5rem; // Large font size for title
+        color: #333; // Darker color for better readability
+        margin-bottom: 20px; // Space below the title
+        text-align: center; // Center the title text
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Optional shadow for the title
+        opacity: 0; 
+        animation: fadeInUp 0.5s ease forwards 0.3s; // Fade-in animation
+    }
+
+    form {
+        width: 100%; // Ensure form takes the full width
+        display: flex;
+        flex-direction: column; // Stack inputs vertically
+
+        input {
+            padding: 10px; // Padding for input fields
+            margin-bottom: 15px; // Space below each input
+            border: 1px solid #ccc; // Light border for input fields
+            border-radius: 5px; // Rounded corners
+            font-size: 1rem; // Font size for input text
+
+            &:focus {
+                border-color: #3498db; // Change border color on focus
+                outline: none; // Remove default outline
+                box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); // Optional shadow on focus
+            }
+        }
+
+        button {
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            background-color: #e67e22; // Button color
+            color: white; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+            opacity: 0; 
+            animation: fadeInUp 0.5s ease forwards 0.6s; // Fade-in animation
+
+            &:hover {
+                background-color: #d35400; // Darker on hover
+            }
+
+            &:focus {
+                outline: none; // Remove focus outline
+                box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); // Optional shadow on focus
+            }
+        }
+    }
+
+    p {
+        font-size: 1.125rem; // Slightly larger font for better readability
+        color: #666; // Dark gray color for text
+        line-height: 1.6; // Increase line height for readability
+        margin-bottom: 20px; // Space below paragraph text
+        max-width: 800px; // Limit width for better text alignment
+        margin: 0 auto; // Center align text
+        opacity: 0; 
+        animation: fadeInUp 0.5s ease forwards 0.9s; // Fade-in animation
     }
 }
 
-// Header styles
-h1 {
-    color: $primary-color;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-// Label styling
-label {
-    display: block;
-    margin: 15px 0 5px;
-    color: $text-color;
-    font-weight: bold;
-}
-
-// Input styling for username, email, and password fields
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid $secondary-color;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-
-    &:focus {
-        border-color: $primary-color;
-        outline: none; // Remove the default outline on focus
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1; 
     }
 }
 
-// Button styling
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: $primary-color;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    position: relative;
-
-    &:hover {
-        background-color: darken($primary-color, 10%); // Darken button on hover
-        transform: translateY(-2px); // Raise button slightly
+@keyframes fadeInUp {
+    from {
+        opacity: 0; 
+        transform: translateY(10px); 
     }
-
-    &:active {
-        transform: translateY(0); // Reset transform on click
-        background-color: lighten($primary-color, 5%); // Lighten button color on click
+    to {
+        opacity: 1; 
+        transform: translateY(0); 
     }
 }
 
-// Success message styling
-.success-message {
-    color: green;
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
-}
+/* Responsive styles */
+@media (max-width: 600px) {
+    .register {
+        padding: 20px 10px; // Adjust padding for smaller screens
 
-// Error message styling
-.error-message {
-    color: red;
-    margin-top: 15px;
-    text-align: center;
-    font-weight: bold;
+        h1 {
+            font-size: 2rem; // Smaller font size for title
+        }
+
+        p {
+            font-size: 1rem; // Smaller font size for paragraph
+        }
+    }
 }

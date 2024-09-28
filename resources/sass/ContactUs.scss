@@ -11,19 +11,22 @@ body {
     color: #343a40; // Keep text color consistent
 }
 
-/* Main login container */
-.login {
+/* Main contact us container */
+.contact-us {
     display: flex;
     flex-direction: column;
     align-items: center;  
     justify-content: flex-start; 
+    width: 100%;        
     padding: 40px 20px; // Match padding from DefaultPage
-    background-color: #ffffff; // White background for content area
     border-radius: 10px; // Rounded corners
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Deeper shadow for depth
+    background-color: #ffffff; // White background for content area
+    animation: fadeIn 0.5s ease; // Animation for fading in
+
+    /* Max width for the content */
     max-width: 800px; // Set a max-width for the content area
     margin: 20px auto; // Center align and add margin around the content
-    animation: fadeIn 0.5s ease; // Animation for fading in
 
     h1 {
         font-size: 2.5rem; // Larger font size for headings
@@ -92,7 +95,7 @@ body {
 
 /* Responsive styles */
 @media (max-width: 600px) {
-    .login {
+    .contact-us {
         padding: 20px 10px; // Adjust padding for smaller screens
 
         h1 {

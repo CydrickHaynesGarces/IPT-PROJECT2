@@ -1,8 +1,7 @@
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Example from "./Example";
-import Home from "./home";  // Ensure this path is correct
+import DefaultPage from "./DefaultPage";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import Login from "./Login"; 
@@ -13,8 +12,7 @@ export default function Routers() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Example />} />
-                <Route path="/Home" element={<Home />} />
+                <Route path="/" element={<DefaultPage />} />            
                 <Route path="/ContactUs" element={<ContactUs />} />
                 <Route path="/AboutUs" element={<AboutUs />} />
                 <Route path="/login" element={<Login />} />

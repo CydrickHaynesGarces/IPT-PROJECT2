@@ -1,0 +1,141 @@
+/* Resetting global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; // Match font family to DefaultPage
+    background-color: #f9f9f9; // Use the same light gray background
+    color: #343a40; // Keep text color consistent
+}
+
+/* Main about us container */
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: flex-start; 
+    padding: 40px 0; // Keep top and bottom padding for spacing
+    background-color: #000; // Set background color to black
+    color: #fff; // Change text color to white
+    width: 100vw; // Use viewport width for full stretch
+    margin-left: calc((100% - 100vw) / 2); // Center horizontally
+    margin-right: calc((100% - 100vw) / 2); // Center horizontally
+
+    h1 {
+        font-size: 2.5rem; // Larger font size for headings
+        color: #fff; // White color for better readability
+        margin-bottom: 20px; // Space below the heading
+        text-align: center; // Center heading text
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); // Optional shadow for the heading
+        opacity: 0; 
+        animation: fadeIn 1s ease forwards 0.3s; // Fade-in animation for heading
+    }
+
+    p {
+        font-size: 1.125rem; // Slightly larger font for better readability
+        color: #e0e0e0; // Lighter gray color for text
+        line-height: 1.6; // Increase line height for readability
+        margin-bottom: 20px; // Space below paragraph text
+        max-width: 800px; // Limit width for better text alignment
+        margin: 0 auto; // Center align text
+        opacity: 0; 
+        animation: fadeIn 1s ease forwards 0.6s; // Fade-in animation for paragraphs
+    }
+
+    .image-gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px; // Space between images
+
+        .image-container {
+            position: relative; // Position relative for the tooltip
+
+            img {
+                max-width: 300px; // Limit image size
+                height: auto;
+                border-radius: 10px; // Optional: add some styling
+                opacity: 0; 
+                animation: imageFadeIn 1s ease forwards; // Fade-in animation for images
+                animation-delay: 1s; // Delay for the image animation
+                transition: transform 0.3s ease, filter 0.3s ease; // Smooth transition for pop-out effect
+
+                &:hover {
+                    transform: scale(1.1); // Pop-out effect on hover
+                    filter: brightness(1.2) drop-shadow(0 0 10px white); // Glowing effect on hover
+                }
+            }
+
+            .tooltip {
+                visibility: hidden; // Hide tooltip initially
+                width: 150px; // Width of the tooltip
+                background-color: rgba(0, 0, 0, 0.8); // Tooltip background
+                color: #fff; // Tooltip text color
+                text-align: center; // Center text
+                border-radius: 5px; // Rounded corners
+                padding: 5px; // Padding around text
+                position: absolute; // Positioning
+                bottom: 100%; // Position above the image
+                left: 50%; // Center horizontally
+                margin-left: -75px; // Offset to center
+                opacity: 0; // Hide tooltip initially
+                transition: opacity 0.3s; // Transition for fade-in effect
+
+                &::after {
+                    content: ""; // Arrow
+                    position: absolute;
+                    top: 100%; // Position at the bottom of the tooltip
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px; // Size of the arrow
+                    border-style: solid;
+                    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent; // Arrow color
+                }
+            }
+
+            &:hover .tooltip {
+                visibility: visible; // Show tooltip on hover
+                opacity: 1; // Fade in effect
+            }
+        }
+    }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1; 
+    }
+}
+
+@keyframes imageFadeIn {
+    from {
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to {
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .about-us {
+        padding: 20px 0; // Adjust padding for smaller screens
+
+        h1 {
+            font-size: 2rem; // Smaller font size for heading
+        }
+
+        p {
+            font-size: 1rem; // Smaller font size for paragraph
+        }
+    }
+}

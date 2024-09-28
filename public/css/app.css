@@ -11966,89 +11966,120 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
-}
-
-.example-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  padding: 20px;
-  text-align: center;
-}
-
-.header {
-  background-color: #2a9d8f;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  transition: background-color 0.3s ease;
-}
-.header:hover {
-  background-color: #238f7a;
-}
-.header h1, .header .h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  animation: fadeIn 1s ease-in;
-}
-.header p {
-  font-size: 1.2em;
-  animation: fadeIn 1.5s ease-in;
-}
-
-.main-content {
-  flex: 1;
+.default-page-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background-color: #f0f4f8; /* Lighter background for a softer look */
+  width: 100vw; /* Use viewport width for full stretch */
+  margin-left: calc((100% - 100vw) / 2); /* Center horizontally */
+  margin-right: calc((100% - 100vw) / 2); /* Center horizontally */
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  animation: fadeIn 0.5s ease;
+  overflow: auto; /* Enable scrolling if content overflows */
+  max-height: 100vh; /* Optional: Limit height to viewport */
 }
 
-.footer {
-  background-color: #264653;
-  color: white;
+.main-content {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  animation: slideIn 0.5s ease forwards;
+}
+.main-content h1, .main-content .h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
   text-align: center;
-  padding: 10px 0;
-  transition: background-color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.3s;
 }
-.footer:hover {
-  background-color: #1b3a4b;
-}
-.footer p {
-  font-size: 1.1em;
-  animation: fadeIn 1.5s ease-in;
+.main-content p {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.6s;
 }
 
+/* New image section styles */
+.image-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.image-container {
+  max-width: 300px;
+  text-align: center;
+  margin: 10px;
+}
+.image-container img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Black glowing effect on hover */
+}
+.image-container img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Black glow */
+}
+.image-container p {
+  font-size: 1.125rem;
+  color: #2c3e50;
+  margin-top: 10px;
+}
+
+/* Nav List with Fixed Position */
 .nav-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 10px 0;
 }
-
 .nav-list li {
-  display: inline;
-  margin: 0 10px;
+  margin: 0 15px;
+}
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+.nav-list li a:hover {
+  background-color: white;
+  color: black;
+}
+.nav-list li.active a {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
+/* Keyframe animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -12057,91 +12088,308 @@ p {
     opacity: 1;
   }
 }
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* About Us and Contact Us sections */
+#about-us, #contact-us {
+  padding: 40px 20px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+#about-us h2, #about-us .h2, #contact-us h2, #contact-us .h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+#about-us p, #contact-us p {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .default-page-container {
+    padding: 20px 10px;
+  }
+  h1, .h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+/* Resetting global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(to right, #f0f8ff, white);
-  height: 100vh;
+  background-color: #f9f9f9;
+  color: #343a40;
+}
+
+/* Main login container */
+.login {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin: 0;
-}
-
-.login-container {
-  max-width: 400px;
-  width: 100%;
-  padding: 30px;
+  justify-content: flex-start;
+  padding: 40px 20px;
   background-color: #ffffff;
-  border: 1px solid #e9c46a;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  animation: fadeIn 0.5s ease;
 }
-.login-container:hover {
-  transform: scale(1.02);
-}
-
-h1, .h1 {
-  color: #2a9d8f;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin: 15px 0 5px;
+.login h1, .login .h1 {
+  font-size: 2.5rem;
   color: #333;
-  font-weight: bold;
-}
-
-input[type=email],
-input[type=password] {
-  width: 100%;
-  padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #e9c46a;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.3s;
 }
-input[type=email]:focus,
-input[type=password]:focus {
-  border-color: #2a9d8f;
-  outline: none;
+.login p {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.6s;
 }
-
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #2a9d8f;
-  color: white;
+.login button {
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 5px;
+  background-color: #e67e22;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  position: relative;
+  transition: background-color 0.3s;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.9s;
 }
-button:hover {
-  background-color: rgb(31.2361809045, 116.7638190955, 106.351758794);
-  transform: translateY(-2px);
+.login button:hover {
+  background-color: #d35400;
 }
-button:active {
-  transform: translateY(0);
-  background-color: rgb(47.3819095477, 177.1180904523, 161.324120603);
-}
-
-.success-message {
-  color: green;
-  margin-top: 15px;
-  text-align: center;
-  font-weight: bold;
+.login button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
-.error-message {
-  color: red;
-  margin-top: 15px;
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive styles */
+@media (max-width: 600px) {
+  .login {
+    padding: 20px 10px;
+  }
+  .login h1, .login .h1 {
+    font-size: 2rem;
+  }
+  .login p {
+    font-size: 1rem;
+  }
+}
+/* Resetting global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+  color: #343a40;
+}
+
+/* Main registration container */
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  animation: fadeIn 0.5s ease;
+}
+.register h1, .register .h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
   text-align: center;
-  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.3s;
+}
+.register form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.register form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.register form input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+.register form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e67e22;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.6s;
+}
+.register form button:hover {
+  background-color: #d35400;
+}
+.register form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.register p {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards 0.9s;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive styles */
+@media (max-width: 600px) {
+  .register {
+    padding: 20px 10px;
+  }
+  .register h1, .register .h1 {
+    font-size: 2rem;
+  }
+  .register p {
+    font-size: 1rem;
+  }
+}
+.nav-list {
+  position: sticky; /* Make the nav sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure it appears above other content */
+  background-color: #000; /* Set background to black */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: flex-start; /* Align items to the left */
+  /* Add a transition for smooth effect */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background and shadow */
+  /* Change styles when scrolled */
+}
+.nav-list li {
+  margin: 0 10px; /* Adjust horizontal margin between links (reduce spacing) */
+}
+.nav-list li a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Change link color to white */
+  border: 2px solid white; /* White border for outline */
+  padding: 10px 20px; /* Add padding for button-like appearance */
+  border-radius: 5px; /* Rounded corners */
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* Transition for hover effect */
+}
+.nav-list li a:hover {
+  color: #000; /* Change text color to black on hover */
+  background-color: white; /* Change background to white on hover */
+  border-color: white; /* Keep border white on hover */
+}
+.nav-list li.active a {
+  background-color: white; /* Set active link background to white */
+  color: #000; /* Change text color to black */
+  font-weight: bold; /* Optional: Make the active link bold */
+  text-decoration: underline; /* Optional: Add underline to active link */
+  border-color: transparent; /* Remove border color for active state */
+}
+.nav-list.scrolled {
+  background-color: #000; /* Keep background black when scrolled */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow when scrolled */
 }

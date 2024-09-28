@@ -1,7 +1,7 @@
 // resources/js/components/Login.js
-import '../../sass/Login.scss';
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import '../../sass/Login.scss';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -9,12 +9,11 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle login logic here (e.g., API call)
         console.log('Logging in with:', email, password);
     };
 
     return (
-        <div>
+        <div className="login">
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -37,6 +36,15 @@ export default function Login() {
                 </div>
                 <button type="submit">Login</button>
             </form>
+
+            <div className="auth-links">
+                <p>Don't have an account? <Link to="/register">Register</Link></p>
+            </div>
+
+            {/* Back to Home link */}
+            <div>
+                <Link to="/">Back to Home</Link>
+            </div>
         </div>
     );
 }
