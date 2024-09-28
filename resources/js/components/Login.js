@@ -13,7 +13,7 @@ export default function Login() {
 
     return (
         <div className="login">
-            <h1>Sign in</h1>
+            <h1>Log in</h1>
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
                     <input 
@@ -33,7 +33,7 @@ export default function Login() {
                         required 
                     />
                 </div>
-                <button type="submit">Sign in</button>
+                <button type="submit">Log in</button>
             </form>
 
             <div className="auth-links">

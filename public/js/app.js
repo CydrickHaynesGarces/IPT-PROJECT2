@@ -10485,7 +10485,7 @@ function Login() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "login",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-      children: "Sign in"
+      children: "Log in"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       onSubmit: handleSubmit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -10512,7 +10512,7 @@ function Login() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "submit",
-        children: "Sign in"
+        children: "Log in"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "auth-links",
@@ -10647,58 +10647,66 @@ function Register() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
       onSubmit: handleSubmit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          htmlFor: "username",
-          children: "Username:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        className: "input-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "text",
           id: "username",
           name: "username",
           value: formData.username,
           onChange: handleChange,
-          required: true
+          required: true,
+          placeholder: " " // Leave this empty for floating label effect
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          htmlFor: "username",
+          children: "Username"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          htmlFor: "email",
-          children: "Email:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        className: "input-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "email",
           id: "email",
           name: "email",
           value: formData.email,
           onChange: handleChange,
-          required: true
+          required: true,
+          placeholder: " " // Leave this empty for floating label effect
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          htmlFor: "email",
+          children: "Email"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-          htmlFor: "password",
-          children: "Password:"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        className: "input-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "password",
           id: "password",
           name: "password",
           value: formData.password,
           onChange: handleChange,
-          required: true
+          required: true,
+          placeholder: " " // Leave this empty for floating label effect
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+          htmlFor: "password",
+          children: "Password"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         type: "submit",
         children: "Register"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "google-signin",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Sign up with Google"
+        })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "auth-links",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-        children: ["Already have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-          to: "/login",
-          children: "Login"
-        })]
-      }), " "]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+      children: ["Already have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+        to: "/login",
+        children: "Login"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
         to: "/",
         children: "Back to Home"
-      }), " "]
+      })
     })]
   });
 }
@@ -15471,7 +15479,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* Resetting global styles */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Arial\", sans-serif;\n  background-color: #f9f9f9;\n  color: #343a40;\n}\n\n/* Main registration container */\n.register {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 40px 20px;\n  background-color: #ffffff;\n  border-radius: 10px;\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n  max-width: 800px;\n  margin: 20px auto;\n  animation: fadeIn 0.5s ease;\n}\n.register h1 {\n  font-size: 2.5rem;\n  color: #333;\n  margin-bottom: 20px;\n  text-align: center;\n  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.3s;\n}\n.register form {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.register form input {\n  padding: 10px;\n  margin-bottom: 15px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  font-size: 1rem;\n}\n.register form input:focus {\n  border-color: #3498db;\n  outline: none;\n  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);\n}\n.register form button {\n  padding: 10px 20px;\n  border: none;\n  border-radius: 5px;\n  background-color: #e67e22;\n  color: white;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.6s;\n}\n.register form button:hover {\n  background-color: #d35400;\n}\n.register form button:focus {\n  outline: none;\n  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);\n}\n.register p {\n  font-size: 1.125rem;\n  color: #666;\n  line-height: 1.6;\n  margin-bottom: 20px;\n  max-width: 800px;\n  margin: 0 auto;\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.9s;\n}\n\n/* Keyframe animations */\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n/* Responsive styles */\n@media (max-width: 600px) {\n  .register {\n    padding: 20px 10px;\n  }\n  .register h1 {\n    font-size: 2rem;\n  }\n  .register p {\n    font-size: 1rem;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* Resetting global styles */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Arial\", sans-serif;\n  background-color: #f9f9f9;\n  color: #343a40;\n}\n\n/* Main registration container */\n.register {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 40px 20px;\n  background-color: #ffffff;\n  border-radius: 10px;\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n  max-width: 400px;\n  margin: 20px auto;\n  animation: fadeIn 0.5s ease;\n}\n.register h1 {\n  font-size: 2rem;\n  color: #333;\n  margin-bottom: 20px;\n  text-align: center;\n}\n.register form {\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.register form .input-container {\n  position: relative;\n  margin-bottom: 20px;\n}\n.register form label {\n  position: absolute;\n  top: 10px;\n  left: 12px;\n  color: #999;\n  font-size: 1rem;\n  transition: 0.2s ease-in-out;\n  pointer-events: none;\n}\n.register form input {\n  width: 100%;\n  padding: 12px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  font-size: 1rem;\n  background-color: #f9f9f9;\n  transition: border-color 0.3s ease;\n}\n.register form input:focus {\n  border-color: #4285f4;\n  outline: none;\n}\n.register form input:not(:-moz-placeholder-shown) + label {\n  top: -8px;\n  left: 10px;\n  background-color: #fff;\n  padding: 0 5px;\n  font-size: 0.8rem;\n  color: #4285f4;\n}\n.register form input:focus + label, .register form input:not(:placeholder-shown) + label {\n  top: -8px;\n  left: 10px;\n  background-color: #fff;\n  padding: 0 5px;\n  font-size: 0.8rem;\n  color: #4285f4;\n}\n.register form button {\n  padding: 12px 20px;\n  border: none;\n  border-radius: 5px;\n  background-color: #4285f4;\n  color: white;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: background-color 0.3s ease;\n}\n.register form button:hover {\n  background-color: #357ae8;\n}\n.register form .google-signin {\n  background-color: #db4437;\n  margin-top: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  border-radius: 5px;\n  padding: 10px 0;\n  color: white;\n  font-size: 1rem;\n}\n.register p {\n  font-size: 1rem;\n  color: #666;\n  line-height: 1.6;\n  margin-top: 20px;\n  text-align: center;\n}\n\n/* Keyframe animation */\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n/* Responsive styles */\n@media (max-width: 600px) {\n  .register {\n    padding: 20px 10px;\n  }\n  .register h1 {\n    font-size: 1.8rem;\n  }\n  .register p {\n    font-size: 0.9rem;\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

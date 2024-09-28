@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; // Match font family to DefaultPage
-    background-color: #f9f9f9; // Use the same light gray background
-    color: #343a40; // Keep text color consistent
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #343a40;
 }
 
 /* Main registration container */
@@ -16,111 +16,126 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;  
-    justify-content: flex-start; // Change to flex-start for consistent vertical alignment
-    padding: 40px 20px; // Match padding from DefaultPage
-    background-color: #ffffff; // White background for content area
-    border-radius: 10px; // Rounded corners
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); // Deeper shadow for depth
-    max-width: 800px; // Set a max-width for the content area
-    margin: 20px auto; // Center align and add margin around the content
-    animation: fadeIn 0.5s ease; // Animation for fading in
+    justify-content: flex-start; 
+    padding: 40px 20px; 
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    animation: fadeIn 0.5s ease;
 
     h1 {
-        font-size: 2.5rem; // Large font size for title
-        color: #333; // Darker color for better readability
-        margin-bottom: 20px; // Space below the title
-        text-align: center; // Center the title text
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // Optional shadow for the title
-        opacity: 0; 
-        animation: fadeInUp 0.5s ease forwards 0.3s; // Fade-in animation
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
     form {
-        width: 100%; // Ensure form takes the full width
+        width: 100%;
         display: flex;
-        flex-direction: column; // Stack inputs vertically
+        flex-direction: column;
+        
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        label {
+            position: absolute;
+            top: 10px;
+            left: 12px;
+            color: #999;
+            font-size: 1rem;
+            transition: 0.2s ease-in-out;
+            pointer-events: none;
+        }
 
         input {
-            padding: 10px; // Padding for input fields
-            margin-bottom: 15px; // Space below each input
-            border: 1px solid #ccc; // Light border for input fields
-            border-radius: 5px; // Rounded corners
-            font-size: 1rem; // Font size for input text
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease;
 
             &:focus {
-                border-color: #3498db; // Change border color on focus
-                outline: none; // Remove default outline
-                box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); // Optional shadow on focus
+                border-color: #4285f4;
+                outline: none;
+            }
+
+            &:focus + label,
+            &:not(:placeholder-shown) + label {
+                top: -8px;
+                left: 10px;
+                background-color: #fff;
+                padding: 0 5px;
+                font-size: 0.8rem;
+                color: #4285f4;
             }
         }
 
         button {
-            padding: 10px 20px; 
-            border: none; 
-            border-radius: 5px; 
-            background-color: #e67e22; // Button color
-            color: white; 
-            font-size: 1rem; 
-            cursor: pointer; 
-            transition: background-color 0.3s; 
-            opacity: 0; 
-            animation: fadeInUp 0.5s ease forwards 0.6s; // Fade-in animation
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4285f4;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
 
             &:hover {
-                background-color: #d35400; // Darker on hover
+                background-color: #357ae8;
             }
+        }
 
-            &:focus {
-                outline: none; // Remove focus outline
-                box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); // Optional shadow on focus
-            }
+        .google-signin {
+            background-color: #db4437;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 10px 0;
+            color: white;
+            font-size: 1rem;
         }
     }
 
     p {
-        font-size: 1.125rem; // Slightly larger font for better readability
-        color: #666; // Dark gray color for text
-        line-height: 1.6; // Increase line height for readability
-        margin-bottom: 20px; // Space below paragraph text
-        max-width: 800px; // Limit width for better text alignment
-        margin: 0 auto; // Center align text
-        opacity: 0; 
-        animation: fadeInUp 0.5s ease forwards 0.9s; // Fade-in animation
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+        margin-top: 20px;
+        text-align: center;
     }
 }
 
-/* Keyframe animations */
+/* Keyframe animation */
 @keyframes fadeIn {
     from {
-        opacity: 0; 
+        opacity: 0;
     }
     to {
-        opacity: 1; 
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0; 
-        transform: translateY(10px); 
-    }
-    to {
-        opacity: 1; 
-        transform: translateY(0); 
+        opacity: 1;
     }
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
     .register {
-        padding: 20px 10px; // Adjust padding for smaller screens
+        padding: 20px 10px;
 
         h1 {
-            font-size: 2rem; // Smaller font size for title
+            font-size: 1.8rem;
         }
 
         p {
-            font-size: 1rem; // Smaller font size for paragraph
+            font-size: 0.9rem;
         }
     }
 }
