@@ -6,7 +6,7 @@ import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import Login from "./Login"; 
 import Register from './Register';
-
+import Dashboard from './Dashboard';
 
 export default function Routers() {
     return (
@@ -17,6 +17,8 @@ export default function Routers() {
                 <Route path="/AboutUs" element={<AboutUs />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                
             </Routes>
         </Router>
     );

@@ -10279,6 +10279,144 @@ function ContactUs() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Dashboard.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Dashboard.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Dashboard)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _sass_Dashboard_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../sass/Dashboard.scss */ "./resources/sass/Dashboard.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+ // Ensure the correct path
+
+function Dashboard() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState2 = _slicedToArray(_useState, 2),
+    isSidebarOpen = _useState2[0],
+    setIsSidebarOpen = _useState2[1]; // State to manage sidebar visibility
+
+  var toggleSidebar = function toggleSidebar() {
+    setIsSidebarOpen(!isSidebarOpen); // Toggle sidebar state
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    className: "dashboard-container",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "sidebar ".concat(isSidebarOpen ? 'open' : 'closed'),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "toggle-button",
+        onClick: toggleSidebar,
+        children: [isSidebarOpen ? '→' : '←', " "]
+      }), isSidebarOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Navigation"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Dashboard"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Statistics"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Upcoming Events"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Recent Activities"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Announcements"
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "main-content",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        children: "Dashboard"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: "Welcome to the dashboard!"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+        className: "statistics",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Statistics"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Total Students: 500"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Total Male Students: 300"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Total Female Students: 200"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Total Teachers: 50"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Total Employees: 20"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+        className: "attendance",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Attendance"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Total Attendance This Month: 90%"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Students Present Today: 450"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+        className: "notice-board",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Notice Board"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Project submission due: October 5, 2024"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Parent-Teacher Meeting: October 10, 2024"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+        className: "event-calendar",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Event Calendar"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Science Fair: October 20, 2024"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "School Play: October 30, 2024"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+        className: "recent-activities",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Recent Activities"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Field Trip to the Museum - September 25, 2024"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Math Competition - September 18, 2024"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+            children: "Community Service Day - September 15, 2024"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+        className: "announcements",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Announcements"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Winter break will start on December 20, 2024, and end on January 5, 2025."
+        })]
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/DefaultPage.js":
 /*!************************************************!*\
   !*** ./resources/js/components/DefaultPage.js ***!
@@ -10717,14 +10855,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Routers)
 /* harmony export */ });
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _DefaultPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DefaultPage */ "./resources/js/components/DefaultPage.js");
 /* harmony import */ var _ContactUs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ContactUs */ "./resources/js/components/ContactUs.js");
 /* harmony import */ var _AboutUs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AboutUs */ "./resources/js/components/AboutUs.js");
 /* harmony import */ var _Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Login */ "./resources/js/components/Login.js");
 /* harmony import */ var _Register__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Register */ "./resources/js/components/Register.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Dashboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Dashboard */ "./resources/js/components/Dashboard.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -10734,29 +10874,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Routers() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Routes, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
         path: "/",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_DefaultPage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_DefaultPage__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
         path: "/ContactUs",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ContactUs__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ContactUs__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
         path: "/AboutUs",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_AboutUs__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AboutUs__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
         path: "/login",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Login__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
         path: "/register",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Register__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Register__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        path: "/dashboard",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Dashboard__WEBPACK_IMPORTED_MODULE_6__["default"], {})
       })]
     })
   });
 }
 if (document.getElementById("root")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_0__.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(Routers, {}), document.getElementById("root"));
+  react_dom__WEBPACK_IMPORTED_MODULE_0__.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Routers, {}), document.getElementById("root"));
 }
 
 /***/ }),
@@ -15328,6 +15471,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "/* Resetting global styles */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: \"Arial\", sans-serif;\n  background-color: #f9f9f9;\n  color: #343a40;\n}\n\n/* Main contact us container */\n.contact-us {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  width: 100%;\n  padding: 40px 20px;\n  border-radius: 10px;\n  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);\n  background-color: #ffffff;\n  animation: fadeIn 0.5s ease;\n  /* Max width for the content */\n  max-width: 800px;\n  margin: 20px auto;\n}\n.contact-us h1 {\n  font-size: 2.5rem;\n  color: #333;\n  margin-bottom: 20px;\n  text-align: center;\n  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.3s;\n}\n.contact-us p {\n  font-size: 1.125rem;\n  color: #666;\n  line-height: 1.6;\n  margin-bottom: 20px;\n  max-width: 800px;\n  margin: 0 auto;\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.6s;\n}\n.contact-us button {\n  padding: 10px 20px;\n  border: none;\n  border-radius: 5px;\n  background-color: #e67e22;\n  color: white;\n  font-size: 1rem;\n  cursor: pointer;\n  transition: background-color 0.3s;\n  opacity: 0;\n  animation: fadeInUp 0.5s ease forwards 0.9s;\n}\n.contact-us button:hover {\n  background-color: #d35400;\n}\n.contact-us button:focus {\n  outline: none;\n  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);\n}\n\n/* Keyframe animations */\n@keyframes fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(10px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n/* Responsive styles */\n@media (max-width: 600px) {\n  .contact-us {\n    padding: 20px 10px;\n  }\n  .contact-us h1 {\n    font-size: 2rem;\n  }\n  .contact-us p {\n    font-size: 1rem;\n  }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/sass/Dashboard.scss":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/sass/Dashboard.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-container {\n  display: flex;\n  height: 100vh;\n  background-color: #f8f9fa;\n}\n.dashboard-container .sidebar {\n  width: 250px;\n  background-color: #343a40;\n  color: #ffffff;\n  padding: 20px;\n  border-radius: 8px 0 0 8px;\n  transition: width 0.3s ease, opacity 0.3s ease;\n  opacity: 1;\n}\n.dashboard-container .sidebar.closed {\n  width: 50px;\n  opacity: 0.7;\n  overflow: hidden;\n}\n.dashboard-container .sidebar .toggle-button {\n  margin-bottom: 20px;\n  background-color: transparent;\n  color: #ffffff;\n  border: none;\n  padding: 10px;\n  cursor: pointer;\n  border-radius: 5px;\n  font-size: 1.5em;\n  transition: background-color 0.3s;\n}\n.dashboard-container .sidebar .toggle-button:hover {\n  background-color: #495057;\n}\n.dashboard-container .sidebar h2 {\n  font-size: 1.5em;\n  margin-bottom: 20px;\n}\n.dashboard-container .sidebar ul {\n  list-style-type: none;\n  padding: 0;\n}\n.dashboard-container .sidebar ul li {\n  padding: 10px 15px;\n  transition: background-color 0.3s;\n  cursor: pointer;\n}\n.dashboard-container .sidebar ul li:hover {\n  background-color: #495057;\n}\n.dashboard-container .main-content {\n  flex-grow: 1;\n  padding: 30px;\n  background-color: #f8f9fa;\n  border-radius: 0 8px 8px 0;\n  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);\n}\n.dashboard-container .main-content h1 {\n  color: #212529;\n  font-size: 2.5em;\n  margin-bottom: 20px;\n}\n.dashboard-container .main-content .statistics,\n.dashboard-container .main-content .attendance,\n.dashboard-container .main-content .notice-board,\n.dashboard-container .main-content .event-calendar,\n.dashboard-container .main-content .recent-activities,\n.dashboard-container .main-content .announcements {\n  margin-bottom: 30px;\n  padding: 20px;\n  background-color: #ffffff;\n  border-radius: 8px;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n}\n.dashboard-container .main-content .statistics h2,\n.dashboard-container .main-content .attendance h2,\n.dashboard-container .main-content .notice-board h2,\n.dashboard-container .main-content .event-calendar h2,\n.dashboard-container .main-content .recent-activities h2,\n.dashboard-container .main-content .announcements h2 {\n  margin-top: 0;\n  color: #343a40;\n  border-bottom: 2px solid #343a40;\n  padding-bottom: 10px;\n  font-size: 1.75em;\n}\n.dashboard-container .main-content .statistics ul,\n.dashboard-container .main-content .attendance ul,\n.dashboard-container .main-content .notice-board ul,\n.dashboard-container .main-content .event-calendar ul,\n.dashboard-container .main-content .recent-activities ul,\n.dashboard-container .main-content .announcements ul {\n  list-style-type: none;\n  padding: 0;\n}\n.dashboard-container .main-content .statistics ul li,\n.dashboard-container .main-content .attendance ul li,\n.dashboard-container .main-content .notice-board ul li,\n.dashboard-container .main-content .event-calendar ul li,\n.dashboard-container .main-content .recent-activities ul li,\n.dashboard-container .main-content .announcements ul li {\n  padding: 10px 0;\n  border-bottom: 1px solid #eaeaea;\n  color: #495057;\n  transition: background-color 0.3s;\n}\n.dashboard-container .main-content .statistics ul li:hover,\n.dashboard-container .main-content .attendance ul li:hover,\n.dashboard-container .main-content .notice-board ul li:hover,\n.dashboard-container .main-content .event-calendar ul li:hover,\n.dashboard-container .main-content .recent-activities ul li:hover,\n.dashboard-container .main-content .announcements ul li:hover {\n  background-color: #e9ecef;\n}\n.dashboard-container .main-content .statistics ul li:last-child,\n.dashboard-container .main-content .attendance ul li:last-child,\n.dashboard-container .main-content .notice-board ul li:last-child,\n.dashboard-container .main-content .event-calendar ul li:last-child,\n.dashboard-container .main-content .recent-activities ul li:last-child,\n.dashboard-container .main-content .announcements ul li:last-child {\n  border-bottom: none;\n}\n.dashboard-container .main-content .statistics p,\n.dashboard-container .main-content .attendance p,\n.dashboard-container .main-content .notice-board p,\n.dashboard-container .main-content .event-calendar p,\n.dashboard-container .main-content .recent-activities p,\n.dashboard-container .main-content .announcements p {\n  margin: 10px 0;\n  color: #495057;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -67207,6 +67374,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_ContactUs_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/sass/Dashboard.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/Dashboard.scss ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Dashboard_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./Dashboard.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[3]!./resources/sass/Dashboard.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Dashboard_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_3_Dashboard_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

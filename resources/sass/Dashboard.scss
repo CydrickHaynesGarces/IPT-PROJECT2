@@ -1,0 +1,118 @@
+.dashboard-container {
+    display: flex; // Enable flexbox for sidebar and main content
+    height: 100vh; // Full height of the viewport
+    background-color: #f8f9fa; // Light gray background for contrast
+
+    .sidebar {
+        width: 250px; // Fixed width for the sidebar
+        background-color: #343a40; // Darker background for sidebar
+        color: #ffffff; // White text color
+        padding: 20px; // Padding for the sidebar content
+        border-radius: 8px 0 0 8px; // Rounded corners on the left
+        transition: width 0.3s ease, opacity 0.3s ease; // Transition for width and opacity
+        opacity: 1; // Initial opacity
+
+        &.closed {
+            width: 50px; // Width when closed
+            opacity: 0.7; // Reduce opacity when closed
+            overflow: hidden; // Hide content overflow
+        }
+
+        .toggle-button {
+            margin-bottom: 20px;
+            background-color: transparent; // Transparent background
+            color: #ffffff; // White text color
+            border: none; // No border
+            padding: 10px;
+            cursor: pointer; // Pointer cursor on hover
+            border-radius: 5px; // Rounded corners for button
+            font-size: 1.5em; // Larger font size for arrows
+            transition: background-color 0.3s; // Transition effect
+
+            &:hover {
+                background-color: #495057; // Darker gray on hover
+            }
+        }
+
+        h2 {
+            font-size: 1.5em; // Section title font size
+            margin-bottom: 20px; // Space below section title
+        }
+
+        ul {
+            list-style-type: none; // Remove bullet points
+            padding: 0; // Remove padding
+
+            li {
+                padding: 10px 15px; // List item padding
+                transition: background-color 0.3s; // Smooth transition effect
+                cursor: pointer; // Pointer cursor on hover
+
+                &:hover {
+                    background-color: #495057; // Darker gray background on hover
+                }
+            }
+        }
+    }
+
+    .main-content {
+        flex-grow: 1; // Allow the main content to grow
+        padding: 30px; // Padding for main content
+        background-color: #f8f9fa; // Match the sidebar background
+        border-radius: 0 8px 8px 0; // Rounded corners on the right
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); // Shadow for separation
+
+        h1 {
+            color: #212529; // Darker shade for the main title
+            font-size: 2.5em; // Main title font size
+            margin-bottom: 20px; // Space below main title
+        }
+
+        // Common styles for all sections
+        .statistics,
+        .attendance,
+        .notice-board,
+        .event-calendar,
+        .recent-activities,
+        .announcements {
+            margin-bottom: 30px; // Space below each section
+            padding: 20px; // Padding for section
+            background-color: #ffffff; // White background for sections
+            border-radius: 8px; // Rounded corners for sections
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Subtle shadow effect
+
+            h2 {
+                margin-top: 0; // Remove top margin for section headers
+                color: #343a40; // Dark gray for section headers
+                border-bottom: 2px solid #343a40; // Underline for section headers
+                padding-bottom: 10px; // Space below section header
+                font-size: 1.75em; // Adjust font size for headers
+            }
+
+            ul {
+                list-style-type: none; // Remove bullet points
+                padding: 0; // Remove padding
+
+                li {
+                    padding: 10px 0; // Padding for list items
+                    border-bottom: 1px solid #eaeaea; // Light gray separator between items
+                    color: #495057; // Medium gray text for list items
+                    transition: background-color 0.3s; // Smooth transition effect
+
+                    &:hover {
+                        background-color: #e9ecef; // Light gray background on hover
+                    }
+                }
+
+                li:last-child {
+                    border-bottom: none; // Remove border for last item
+                }
+            }
+
+            p {
+                margin: 10px 0; // Slight margin for paragraphs
+                color: #495057; // Medium gray for paragraph text
+            }
+        }
+    }
+}
