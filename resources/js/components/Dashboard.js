@@ -1,82 +1,131 @@
+// src/components/DashboardLayout.js
 import React, { useState } from 'react';
-import '../../sass/Dashboard.scss'; // Ensure the correct path
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap styles are applied
+import '../../sass/Dashboard.scss'; // Adjust path to your SCSS file if needed
+import Calendar from 'react-calendar'; // Import the calendar component
+import 'react-calendar/dist/Calendar.css'; // Import calendar styles
 
-export default function Dashboard() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true); // State to manage sidebar visibility
-
-    const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen); // Toggle sidebar state
-    };
+export default function DashboardLayout() {
+    const [date, setDate] = useState(new Date()); // State to manage selected date
 
     return (
-        <div className="dashboard-container">
-            <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
-                <div className="toggle-button" onClick={toggleSidebar}>
-                    {isSidebarOpen ? '→' : '←'} {/* Arrow symbols for open/close */}
-                </div>
-                {isSidebarOpen && (
-                    <>
-                        <h2>Navigation</h2>
-                        <ul>
-                            <li>Dashboard</li>
-                            <li>Statistics</li>
-                            <li>Upcoming Events</li>
-                            <li>Recent Activities</li>
-                            <li>Announcements</li>
+        <div className="container-fluid">
+            <nav className="navbar navbar-inverse visible-xs">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+                        <a className="navbar-brand" href="#">School Logo</a>
+                    </div>
+                    <div className="collapse navbar-collapse" id="myNavbar">
+                        <ul className="nav navbar-nav">
+                            <li className="active"><a href="#dashboard">Dashboard</a></li>
+                            <li><a href="#students">Students</a></li>
+                            <li><a href="#classes">Classes</a></li>
+                            <li><a href="#teachers">Teachers</a></li>
                         </ul>
-                    </>
-                )}
-            </div>
-            <div className="main-content">
-                <h1>Dashboard</h1>
-                <p>Welcome to the dashboard!</p>
+                    </div>
+                </div>
+            </nav>
 
-                <section className="statistics">
-                    <h2>Statistics</h2>
-                    <ul>
-                        <li>Total Students: 500</li>
-                        <li>Total Male Students: 300</li>
-                        <li>Total Female Students: 200</li>
-                        <li>Total Teachers: 50</li>
-                        <li>Total Employees: 20</li>
+            <div className="row content">
+                <div className="col-sm-3 sidenav hidden-xs">
+                    <h2>School Management</h2>
+                    <ul className="nav nav-pills nav-stacked">
+                        <li className="active"><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#students">Students</a></li>
+                        <li><a href="#classes">Classes</a></li>
+                        <li><a href="#teachers">Teachers</a></li>
+                        <li><a href="#reports">Reports</a></li>
                     </ul>
-                </section>
+                    <br />
+                </div>
 
-                <section className="attendance">
-                    <h2>Attendance</h2>
-                    <p>Total Attendance This Month: 90%</p>
-                    <p>Students Present Today: 450</p>
-                </section>
+                <div className="col-sm-9">
+                    <div className="well">
+                        <h4>Dashboard Overview</h4>
+                        <p>Welcome to the school management dashboard! Here you can monitor student enrollment, class schedules, and teacher assignments.</p>
+                    </div>
+                    <div className="row statistics">
+                        <div className="col-sm-3">
+                            <div className="well">
+                                <h4>Total Students</h4>
+                                <p>1,200</p>
+                            </div>
+                        </div>
+                        <div className="col-sm-3">
+                            <div className="well">
+                                <h4>Total Classes</h4>
+                                <p>40</p>
+                            </div>
+                        </div>
+                        <div className="col-sm-3">
+                            <div className="well">
+                                <h4>Total Teachers</h4>
+                                <p>60</p>
+                            </div>
+                        </div>
+                        <div className="col-sm-3">
+                            <div className="well">
+                                <h4>Recent Enrollments</h4>
+                                <p>25</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <section className="notice-board">
-                    <h2>Notice Board</h2>
-                    <ul>
-                        <li>Project submission due: October 5, 2024</li>
-                        <li>Parent-Teacher Meeting: October 10, 2024</li>
-                    </ul>
-                </section>
+                    <h4>Recent Activities</h4>
+                    <div className="row activities">
+                        <div className="col-sm-4">
+                            <div className="well activity">
+                                <h5>New Enrollment</h5>
+                                <p>25 new students enrolled this month.</p>
+                            </div>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="well activity">
+                                <h5>Class Performance</h5>
+                                <p>Average score: 88% in final exams.</p>
+                            </div>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="well activity">
+                                <h5>Upcoming Events</h5>
+                                <p>Parent-Teacher Conference on April 10.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row activities">
+                        <div className="col-sm-4">
+                            <div className="well activity">
+                                <h5>Extracurricular Activities</h5>
+                                <p>New clubs formed: Science Club, Art Club.</p>
+                            </div>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="well activity">
+                                <h5>School Trips</h5>
+                                <p>Field trip to the Science Museum scheduled for May 5.</p>
+                            </div>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="well activity">
+                                <h5>Attendance Rate</h5>
+                                <p>Average attendance: 95% this semester.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <section className="event-calendar">
-                    <h2>Event Calendar</h2>
-                    <ul>
-                        <li>Science Fair: October 20, 2024</li>
-                        <li>School Play: October 30, 2024</li>
-                    </ul>
-                </section>
-
-                <section className="recent-activities">
-                    <h2>Recent Activities</h2>
-                    <ul>
-                        <li>Field Trip to the Museum - September 25, 2024</li>
-                        <li>Math Competition - September 18, 2024</li>
-                        <li>Community Service Day - September 15, 2024</li>
-                    </ul>
-                </section>
-
-                <section className="announcements">
-                    <h2>Announcements</h2>
-                    <p>Winter break will start on December 20, 2024, and end on January 5, 2025.</p>
-                </section>
+                    <h4>Calendar</h4>
+                    <div className="calendar-container">
+                        <Calendar 
+                            onChange={setDate} // Set the selected date
+                            value={date} // Display the currently selected date
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

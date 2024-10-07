@@ -4,13 +4,15 @@
     z-index: 1000; /* Ensure it appears above other content */
     background-color: #000; /* Set background to black */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
-    
     list-style-type: none; /* Remove default list styling */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
     display: flex; /* Use flexbox for horizontal layout */
     justify-content: flex-start; /* Align items to the left */
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for background and shadow */
+    
+    /* Ensure a smooth scroll for anchor links */
+    scroll-behavior: smooth;
 
     li {
         margin: 0 10px; /* Adjust horizontal margin between links */
@@ -54,4 +56,45 @@
         background-color: #000; /* Keep background black when scrolled */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow when scrolled */
     }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center items */
+        padding: 10px;
+
+        li {
+            margin: 10px 0; /* Increase margin between links for better spacing */
+
+            a {
+                padding: 10px 15px; /* Adjust padding for smaller screens */
+                width: 100%; /* Full width for buttons on small screens */
+                text-align: center; /* Center text */
+            }
+        }
+    }
+
+    /* Add a smooth transition for scroll effects */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Custom media query for very small screens */
+    @media (max-width: 480px) {
+        li a {
+            font-size: 14px; /* Adjust font size for small screens */
+            padding: 8px 12px; /* Reduce padding slightly */
+        }
+    }
+}
+
+/* Additional Styles for Active and Scroll Behavior */
+.active {
+    background-color: white;
+    color: black;
+}
+
+/* Smooth scroll behavior when clicking anchor links */
+html {
+    scroll-behavior: smooth;
 }

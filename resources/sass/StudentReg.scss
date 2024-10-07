@@ -1,0 +1,48 @@
+// src/sass/StudentInfo.scss
+
+.student-info {
+    max-width: 400px; // Set a max width for the form
+    margin: 20px auto; // Center the form
+    padding: 20px;
+    border: 1px solid #ccc; // Add a border
+    border-radius: 8px; // Rounded corners
+    background-color: #f9f9f9; // Light background
+
+    h1 {
+        text-align: center; // Center the title
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column; // Stack inputs vertically
+
+        input {
+            margin-bottom: 15px; // Space between inputs
+            padding: 10px;
+            border: 1px solid #ccc; // Border for inputs
+            border-radius: 5px; // Rounded corners
+            font-size: 1rem; // Input font size
+
+            &:focus {
+                border-color: #007bff; // Change border color on focus
+                outline: none; // Remove default outline
+            }
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff; // Blue background
+            color: white; // White text
+            border: none; // No border
+            border-radius: 5px; // Rounded corners
+            cursor: pointer; // Pointer cursor on hover
+            font-size: 1rem;
+
+            &:hover {
+                background-color: #0056b3; // Darker blue on hover
+            }
+        }
+    }
+}

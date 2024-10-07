@@ -37,7 +37,7 @@ export default function Login() {
             </form>
 
             <div className="auth-links">
-                <p>Don't have an account? <Link to="/register">Register</Link></p>
+                <p>Login as Admin? <Link to="/admin-login">Login as Admin</Link></p>
             </div>
 
             <div>

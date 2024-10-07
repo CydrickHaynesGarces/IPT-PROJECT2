@@ -1,11 +1,10 @@
-// resources/js/components/Register.js
+// resources/js/components/AdminLogin.js
 import React, { useState } from 'react';
-import '../../sass/Register.scss'; // Import the SCSS for styling
+import '../../sass/AdminLogin.scss'; // Update the SCSS for admin login styling
 import { Link } from 'react-router-dom'; // Import Link for navigation
 
-export default function Register() {
+export default function AdminLogin() {
     const [formData, setFormData] = useState({
-        username: '',
         email: '',
         password: '',
     });
@@ -20,25 +19,14 @@ export default function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Registering user:', formData);
+        console.log('Logging in as admin:', formData);
+        // Add login logic for admin here
     };
 
     return (
-        <div className="register">
-            <h1>Register</h1>
+        <div className="admin-login">
+            <h1>Admin Login</h1>
             <form onSubmit={handleSubmit}>
-                <div className="input-container">
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        required
-                        placeholder=" " // Leave this empty for floating label effect
-                    />
-                    <label htmlFor="username">Username</label>
-                </div>
                 <div className="input-container">
                     <input
                         type="email"
@@ -63,12 +51,8 @@ export default function Register() {
                     />
                     <label htmlFor="password">Password</label>
                 </div>
-                <button type="submit">Register</button>
-                <div className="google-signin">
-                    <span>Sign up with Google</span>
-                </div>
+                <button type="submit">Login as Admin</button>
             </form>
-            <p>Already have an account? <Link to="/login">Login</Link></p>
             <div>
                 <Link to="/">Back to Home</Link>
             </div>

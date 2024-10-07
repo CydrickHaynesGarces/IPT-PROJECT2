@@ -1,118 +1,123 @@
-.dashboard-container {
-    display: flex; // Enable flexbox for sidebar and main content
-    height: 100vh; // Full height of the viewport
-    background-color: #f8f9fa; // Light gray background for contrast
+.container-fluid {
+    padding: 20px;
+    background-color: #f0f4f8; // Soft background color for the entire dashboard
 
-    .sidebar {
-        width: 250px; // Fixed width for the sidebar
-        background-color: #343a40; // Darker background for sidebar
-        color: #ffffff; // White text color
-        padding: 20px; // Padding for the sidebar content
-        border-radius: 8px 0 0 8px; // Rounded corners on the left
-        transition: width 0.3s ease, opacity 0.3s ease; // Transition for width and opacity
-        opacity: 1; // Initial opacity
+    .content {
+        margin-top: 20px;
+    }
 
-        &.closed {
-            width: 50px; // Width when closed
-            opacity: 0.7; // Reduce opacity when closed
-            overflow: hidden; // Hide content overflow
-        }
-
-        .toggle-button {
-            margin-bottom: 20px;
-            background-color: transparent; // Transparent background
-            color: #ffffff; // White text color
-            border: none; // No border
-            padding: 10px;
-            cursor: pointer; // Pointer cursor on hover
-            border-radius: 5px; // Rounded corners for button
-            font-size: 1.5em; // Larger font size for arrows
-            transition: background-color 0.3s; // Transition effect
-
-            &:hover {
-                background-color: #495057; // Darker gray on hover
-            }
-        }
+    .sidenav {
+        background-color: #ffffff; // White background for the sidebar
+        border-right: 1px solid #ddd; // Add border to the sidebar
+        padding: 15px;
+        border-radius: 8px; // Rounded corners for sidebar
 
         h2 {
-            font-size: 1.5em; // Section title font size
-            margin-bottom: 20px; // Space below section title
+            font-size: 24px; // Increased font size for title
+            margin-bottom: 20px;
+            text-align: center; // Center the title
+            color: #2c3e50; // Darker color for better visibility
         }
 
-        ul {
-            list-style-type: none; // Remove bullet points
-            padding: 0; // Remove padding
+        .nav-pills > li {
+            margin-bottom: 10px; // Spacing between nav items
 
-            li {
-                padding: 10px 15px; // List item padding
-                transition: background-color 0.3s; // Smooth transition effect
-                cursor: pointer; // Pointer cursor on hover
+            > a {
+                color: #333;
+                font-weight: bold;
+                border-radius: 20px; // Rounded buttons
 
                 &:hover {
-                    background-color: #495057; // Darker gray background on hover
+                    background-color: #e7e7e7;
+                    transition: background-color 0.3s; // Smooth transition
                 }
+            }
+
+            &.active > a {
+                background-color: #3498db; // Active link color
+                color: white;
             }
         }
     }
 
-    .main-content {
-        flex-grow: 1; // Allow the main content to grow
-        padding: 30px; // Padding for main content
-        background-color: #f8f9fa; // Match the sidebar background
-        border-radius: 0 8px 8px 0; // Rounded corners on the right
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); // Shadow for separation
+    .well {
+        background-color: #ffffff; // White background for cards
+        border: none; // Remove border for a cleaner look
+        border-radius: 8px; // Rounded corners for cards
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        transition: transform 0.3s; // Animation for hover effect
 
-        h1 {
-            color: #212529; // Darker shade for the main title
-            font-size: 2.5em; // Main title font size
-            margin-bottom: 20px; // Space below main title
+        &:hover {
+            transform: translateY(-5px) scale(1.02); // Lift and scale effect on hover
         }
 
-        // Common styles for all sections
-        .statistics,
-        .attendance,
-        .notice-board,
-        .event-calendar,
-        .recent-activities,
-        .announcements {
-            margin-bottom: 30px; // Space below each section
-            padding: 20px; // Padding for section
-            background-color: #ffffff; // White background for sections
-            border-radius: 8px; // Rounded corners for sections
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Subtle shadow effect
+        h4 {
+            margin: 0 0 10px;
+            color: #2c3e50; // Darker color for card headings
+        }
 
-            h2 {
-                margin-top: 0; // Remove top margin for section headers
-                color: #343a40; // Dark gray for section headers
-                border-bottom: 2px solid #343a40; // Underline for section headers
-                padding-bottom: 10px; // Space below section header
-                font-size: 1.75em; // Adjust font size for headers
-            }
+        h5 {
+            margin-bottom: 10px;
+            color: #2980b9; // Change color for subheadings
+        }
+    }
 
-            ul {
-                list-style-type: none; // Remove bullet points
-                padding: 0; // Remove padding
+    .statistics {
+        margin-bottom: 20px;
 
-                li {
-                    padding: 10px 0; // Padding for list items
-                    border-bottom: 1px solid #eaeaea; // Light gray separator between items
-                    color: #495057; // Medium gray text for list items
-                    transition: background-color 0.3s; // Smooth transition effect
+        .well {
+            text-align: center; // Center text in stats cards
+            background-color: #e7f9fe; // Light blue background for stats cards
+            border-radius: 8px; // Rounded corners
 
-                    &:hover {
-                        background-color: #e9ecef; // Light gray background on hover
-                    }
-                }
-
-                li:last-child {
-                    border-bottom: none; // Remove border for last item
-                }
+            h4 {
+                color: #3498db; // Blue color for stat headings
+                font-size: 22px; // Increased font size
             }
 
             p {
-                margin: 10px 0; // Slight margin for paragraphs
-                color: #495057; // Medium gray for paragraph text
+                font-size: 26px; // Larger font size for values
+                font-weight: bold;
+                color: #2c3e50; // Darker color for text
             }
+        }
+    }
+
+    .activities {
+        .activity {
+            background-color: #f9f9f9; // Light gray background for activity cards
+            border-radius: 8px; // Rounded corners
+            padding: 10px;
+            margin-bottom: 10px; // Space between activities
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            h5 {
+                color: #2980b9;
+                margin-bottom: 5px;
+            }
+
+            p {
+                margin: 0;
+                color: #555;
+            }
+        }
+    }
+
+    .calendar-container {
+        margin-top: 20px; // Space above the calendar
+        display: flex; // Center the calendar
+        justify-content: center;
+        align-items: center;
+
+        // Additional styling for the calendar can be added here if needed
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+        .sidenav {
+            display: none; // Hide sidenav on smaller screens
         }
     }
 }

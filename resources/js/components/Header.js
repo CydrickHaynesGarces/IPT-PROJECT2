@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../../sass/Header.scss';
-import SocialMediaLinks from './SocialMediaLinks';
 
 export default function Header() {
     const [backgroundOpacity, setBackgroundOpacity] = useState(1); // For background opacity
@@ -25,7 +24,6 @@ export default function Header() {
                     <h1>IPT-PROJECT SYSTEM</h1>
                     <p>Layo na pero layo pagyud T T.</p>
                 </div>
-                <SocialMediaLinks />
             </div>
         </header>
     );

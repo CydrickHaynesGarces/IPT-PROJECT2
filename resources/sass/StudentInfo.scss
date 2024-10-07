@@ -1,0 +1,71 @@
+.student-info {
+    background-color: #e7f1ff; // Light blue background for a fresh look
+    border-radius: 15px; // Slightly more rounded corners
+    padding: 40px; // Add some padding
+    max-width: 600px; // Set a max width for the component
+    margin: 40px auto; // Center the component on the page
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); // Deeper shadow for a more pronounced effect
+    font-family: 'Arial', sans-serif; // Use a clean font
+
+    h1 {
+        font-size: 30px; // Larger heading size
+        color: #2c3e50; // Darker blue color for the heading
+        text-align: center; // Center the heading
+        margin-bottom: 40px; // Space below the heading
+        text-transform: uppercase; // Uppercase heading
+        letter-spacing: 1.5px; // Add more spacing between letters
+        border-bottom: 2px solid #3498db; // Underline effect with color
+        padding-bottom: 10px; // Space below the underline
+    }
+
+    .data-card {
+        background: #ffffff; // White background for data card
+        border-radius: 15px; // Rounded corners for the card
+        padding: 25px; // Padding inside the card
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); // Softer shadow for the card
+        display: flex; // Flexbox layout for data items
+        flex-direction: column; // Column layout
+        transition: transform 0.2s; // Smooth scaling effect on hover
+
+        &:hover {
+            transform: translateY(-5px); // Lift effect on hover
+        }
+
+        .data-item {
+            padding: 12px 0; // Spacing between items
+            border-bottom: 1px solid #e0e0e0; // Divider line between items
+            font-size: 18px; // Text size for the data items
+            color: #34495e; // Slightly darker text color for better contrast
+
+            strong {
+                color: #2980b9; // Lighter blue color for labels
+                font-weight: bold; // Bold labels
+            }
+
+            &:last-child {
+                border-bottom: none; // Remove border from the last item
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 30px; // Space above the footer
+        text-align: center; // Center the footer
+    }
+
+    .btn {
+        background-color: #3498db; // Button background color
+        color: white; // Button text color
+        border: none; // Remove border
+        border-radius: 25px; // More rounded corners for a modern look
+        padding: 12px 20px; // Padding for the button
+        font-size: 16px; // Font size for the button
+        cursor: pointer; // Pointer cursor
+        transition: background-color 0.3s, transform 0.2s; // Smooth background color transition
+
+        &:hover {
+            background-color: #2980b9; // Darker blue on hover
+            transform: scale(1.05); // Slightly enlarge on hover
+        }
+    }
+}

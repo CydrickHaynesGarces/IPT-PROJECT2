@@ -11,7 +11,9 @@ export default function NavList() {
                 <li><a href="#about-us">About Us</a></li> {/* Use anchor link for smooth scroll */}
                 <li><a href="#contact-us">Contact Us</a></li> {/* Use anchor link for smooth scroll */}
                 <li><Link to="/login">Login</Link></li>
-                <li><Link to="/register">Register</Link></li>
+                <li><Link to="/admin-login">Admin Login</Link></li> {/* Changed from Register to Admin Login */}
+                
+                
             </ul>
         </nav>
     );
