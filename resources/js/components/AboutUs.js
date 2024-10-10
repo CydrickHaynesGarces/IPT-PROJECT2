@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../sass/AboutUs.scss';
+import '../../sass/AboutUs.scss'; // Import SCSS for styling
 
 export default function AboutUs() {
     return (

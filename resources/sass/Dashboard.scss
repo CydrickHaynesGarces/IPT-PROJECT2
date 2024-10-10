@@ -1,123 +1,154 @@
 .container-fluid {
-    padding: 20px;
-    background-color: #f0f4f8; // Soft background color for the entire dashboard
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4; // Light gray background for the container
+}
 
-    .content {
-        margin-top: 20px;
+.sidebar {
+    flex: 0 0 250px; 
+    background: rgba(0, 0, 255, 0.8); // Blue sidebar
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2; // Ensure sidebar is above other content
+
+    &.hidden {
+        transform: translateX(-100%); // Slide out when hidden
+        z-index: 1; // Ensure sidebar is behind main content when hidden
+    }
+}
+
+.main {
+    flex: 1; 
+    display: flex; 
+    padding: 20px; 
+    overflow-y: auto; 
+    background: #fff; 
+    transition: margin-left 0.3s ease; // Smooth transition for margin changes
+
+    &.sidebar-collapsed {
+        margin-left: 80px; // Adjust margin when sidebar is collapsed
     }
 
-    .sidenav {
-        background-color: #ffffff; // White background for the sidebar
-        border-right: 1px solid #ddd; // Add border to the sidebar
-        padding: 15px;
-        border-radius: 8px; // Rounded corners for sidebar
+    .left-content {
+        flex: 3; // Make left content take more space
+        padding-right: 20px; // Space between left and right content
 
-        h2 {
-            font-size: 24px; // Increased font size for title
-            margin-bottom: 20px;
-            text-align: center; // Center the title
-            color: #2c3e50; // Darker color for better visibility
+        .dashboard-title {
+            margin-bottom: 20px; 
+            font-size: 2rem; 
+            color: #343a40; 
+            font-weight: bold; 
+            text-align: center; 
         }
 
-        .nav-pills > li {
-            margin-bottom: 10px; // Spacing between nav items
+        .statistics-section {
+            display: flex; 
+            justify-content: space-between; 
+            margin-bottom: 20px; 
 
-            > a {
-                color: #333;
-                font-weight: bold;
-                border-radius: 20px; // Rounded buttons
+            .statistic {
+                background: #d1ecf1; // Light blue background for statistics
+                border-radius: 10px; 
+                padding: 20px; 
+                flex: 1 1 30%; // Responsive basis
+                margin: 10px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                text-align: center; 
 
-                &:hover {
-                    background-color: #e7e7e7;
-                    transition: background-color 0.3s; // Smooth transition
+                h2 {
+                    font-size: 1.5rem; 
+                    color: #007bff; 
+                }
+
+                p {
+                    font-size: 1.2rem; 
+                    color: #333; 
+                }
+
+                .chart-wrapper {
+                    position: relative; // Enable absolute positioning for the child element
+                    height: 300px; // Fixed height for the chart
+                    width: 300px; // Fixed width for the chart
+                    margin: 0 auto; // Center the chart horizontally
+
+                    .center-text {
+                        position: absolute; // Position the text absolutely within the wrapper
+                        top: 50%; // Center vertically
+                        left: 50%; // Center horizontally
+                        transform: translate(-50%, -50%); // Adjust the position to the exact center
+                        font-size: 1.5rem; // Adjust font size as needed
+                        font-weight: bold; // Bold text
+                        color: #000; // Text color
+                        z-index: 1; // Ensure text is on top of the chart
+                    }
                 }
             }
+        }
 
-            &.active > a {
-                background-color: #3498db; // Active link color
-                color: white;
+        .chart-section {
+            display: flex; 
+            flex-direction: column; 
+            margin-top: 20px;
+
+            .chart {
+                background: #f8f9fa; // Light background for charts
+                padding: 20px; 
+                border-radius: 10px; 
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+                margin-bottom: 20px; 
+
+                h2 {
+                    font-size: 1.5rem; 
+                    color: #343a40; 
+                    margin-bottom: 10px; 
+                }
             }
         }
     }
 
-    .well {
-        background-color: #ffffff; // White background for cards
-        border: none; // Remove border for a cleaner look
-        border-radius: 8px; // Rounded corners for cards
-        padding: 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        transition: transform 0.3s; // Animation for hover effect
+    .right-content {
+        flex: 2; // Adjust space for right content
+        padding-left: 20px; 
 
-        &:hover {
-            transform: translateY(-5px) scale(1.02); // Lift and scale effect on hover
-        }
+        .calendar-section {
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px; 
 
-        h4 {
-            margin: 0 0 10px;
-            color: #2c3e50; // Darker color for card headings
-        }
-
-        h5 {
-            margin-bottom: 10px;
-            color: #2980b9; // Change color for subheadings
-        }
-    }
-
-    .statistics {
-        margin-bottom: 20px;
-
-        .well {
-            text-align: center; // Center text in stats cards
-            background-color: #e7f9fe; // Light blue background for stats cards
-            border-radius: 8px; // Rounded corners
-
-            h4 {
-                color: #3498db; // Blue color for stat headings
-                font-size: 22px; // Increased font size
-            }
-
-            p {
-                font-size: 26px; // Larger font size for values
-                font-weight: bold;
-                color: #2c3e50; // Darker color for text
+            h2 {
+                font-size: 1.5rem; 
+                color: #343a40; 
+                margin-bottom: 10px; 
             }
         }
-    }
 
-    .activities {
-        .activity {
-            background-color: #f9f9f9; // Light gray background for activity cards
-            border-radius: 8px; // Rounded corners
-            padding: 10px;
-            margin-bottom: 10px; // Space between activities
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        .notice-board-section {
+            background: #f8f9fa; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 
-            h5 {
-                color: #2980b9;
-                margin-bottom: 5px;
+            h2 {
+                font-size: 1.5rem; 
+                color: #343a40; 
+                margin-bottom: 10px; 
             }
 
-            p {
-                margin: 0;
-                color: #555;
+            .notice-list {
+                list-style: none; 
+                padding: 0; 
+
+                .notice-item {
+                    background: #e2e3e5; // Light gray for notice items
+                    margin: 5px 0; 
+                    padding: 10px; 
+                    border-radius: 5px; 
+                }
             }
-        }
-    }
-
-    .calendar-container {
-        margin-top: 20px; // Space above the calendar
-        display: flex; // Center the calendar
-        justify-content: center;
-        align-items: center;
-
-        // Additional styling for the calendar can be added here if needed
-    }
-
-    // Responsive adjustments
-    @media (max-width: 768px) {
-        .sidenav {
-            display: none; // Hide sidenav on smaller screens
         }
     }
 }

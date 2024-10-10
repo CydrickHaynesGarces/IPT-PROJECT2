@@ -1,71 +1,132 @@
-.student-info {
-    background-color: #e7f1ff; // Light blue background for a fresh look
-    border-radius: 15px; // Slightly more rounded corners
-    padding: 40px; // Add some padding
-    max-width: 600px; // Set a max width for the component
-    margin: 40px auto; // Center the component on the page
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); // Deeper shadow for a more pronounced effect
-    font-family: 'Arial', sans-serif; // Use a clean font
+.container-fluid {
+    height: 100vh; // Ensure the container fills the viewport height
+    display: flex; // Use flexbox for layout
+}
+
+.sidebar {
+    width: 250px; // Width when expanded
+    transition: width 0.3s ease;
+    background-color: #343a40; // Dark sidebar background color
+    color: #ffffff; // Text color
+    padding: 20px 0; // Add padding to the sidebar
+
+    &.collapsed {
+        width: 60px; // Width when collapsed
+    }
+
+    .nav {
+        padding-left: 0; // Remove default padding for nav
+
+        .nav-link {
+            color: #ffffff; // Link color
+            font-weight: bold; // Make links bold
+            display: flex; // Align icons and text
+            align-items: center; // Center vertically
+            padding: 10px 20px; // Padding for links
+            transition: background 0.3s; // Transition for hover effect
+
+            &:hover {
+                background-color: #495057; // Change background on hover
+                border-radius: 5px; // Add rounded corners
+            }
+
+            .link-text {
+                margin-left: 10px; // Space between icon and text
+                transition: opacity 0.3s; // Transition for text visibility
+            }
+        }
+
+        .logout-btn {
+            color: #dc3545; // Logout button color
+        }
+    }
+}
+
+.main {
+    flex-grow: 1; // Allow main to take remaining space
+    transition: margin-left 0.3s ease;
+    margin-left: 0; // Default margin for main content
+    padding: 20px; // Add padding to the main content
+
+    &.sidebar-hidden {
+        margin-left: 60px; // Adjust margin when sidebar is hidden
+    }
+    
+    &.sidebar-visible {
+        margin-left: 250px; // Adjust margin when sidebar is visible
+    }
 
     h1 {
-        font-size: 30px; // Larger heading size
-        color: #2c3e50; // Darker blue color for the heading
-        text-align: center; // Center the heading
-        margin-bottom: 40px; // Space below the heading
-        text-transform: uppercase; // Uppercase heading
-        letter-spacing: 1.5px; // Add more spacing between letters
-        border-bottom: 2px solid #3498db; // Underline effect with color
-        padding-bottom: 10px; // Space below the underline
+        color: #343a40; // Header color
+        font-size: 24px; // Header font size
+        margin-bottom: 20px; // Space below header
     }
 
-    .data-card {
-        background: #ffffff; // White background for data card
-        border-radius: 15px; // Rounded corners for the card
-        padding: 25px; // Padding inside the card
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); // Softer shadow for the card
-        display: flex; // Flexbox layout for data items
-        flex-direction: column; // Column layout
-        transition: transform 0.2s; // Smooth scaling effect on hover
+    .search-container {
+        margin-bottom: 20px;
+        display: flex; // Use flexbox for search input alignment
+        justify-content: center;
 
-        &:hover {
-            transform: translateY(-5px); // Lift effect on hover
+        .search-input {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            margin-right: 10px;
+            width: 200px; // Set a fixed width for search inputs
+            transition: border-color 0.3s; // Transition for border color
+
+            &:focus {
+                border-color: #80bdff; // Change border color on focus
+                outline: none; // Remove default outline
+            }
         }
 
-        .data-item {
-            padding: 12px 0; // Spacing between items
-            border-bottom: 1px solid #e0e0e0; // Divider line between items
-            font-size: 18px; // Text size for the data items
-            color: #34495e; // Slightly darker text color for better contrast
+        .btn {
+            background-color: #007bff; // Button background color
+            color: #ffffff; // Button text color
+            border: none; // Remove border
+            padding: 10px 20px; // Add padding to the button
+            border-radius: 4px; // Round the button corners
+            transition: background-color 0.3s; // Transition for hover effect
 
-            strong {
-                color: #2980b9; // Lighter blue color for labels
-                font-weight: bold; // Bold labels
-            }
-
-            &:last-child {
-                border-bottom: none; // Remove border from the last item
+            &:hover {
+                background-color: #0056b3; // Darker blue on hover
             }
         }
     }
 
-    .footer {
-        margin-top: 30px; // Space above the footer
-        text-align: center; // Center the footer
-    }
+    .table-responsive {
+        table {
+            width: 100%; // Full width table
+            border-collapse: collapse; // Remove space between cells
+            border-radius: 0.5rem; // Round table corners
+            overflow: hidden; // Hide overflow for rounded corners
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Add shadow to table
 
-    .btn {
-        background-color: #3498db; // Button background color
-        color: white; // Button text color
-        border: none; // Remove border
-        border-radius: 25px; // More rounded corners for a modern look
-        padding: 12px 20px; // Padding for the button
-        font-size: 16px; // Font size for the button
-        cursor: pointer; // Pointer cursor
-        transition: background-color 0.3s, transform 0.2s; // Smooth background color transition
+            thead {
+                background-color: #007bff; // Header background color
+                color: #ffffff; // Header text color
 
-        &:hover {
-            background-color: #2980b9; // Darker blue on hover
-            transform: scale(1.05); // Slightly enlarge on hover
+                th {
+                    padding: 10px; // Padding for header cells
+                    text-align: left; // Left align text
+                }
+            }
+
+            tbody {
+                tr {
+                    transition: background 0.3s; // Transition for row hover effect
+
+                    &:hover {
+                        background-color: #f1f1f1; // Change background on row hover
+                    }
+
+                    td {
+                        padding: 10px; // Padding for cells
+                        border-bottom: 1px solid #dee2e6; // Border between rows
+                    }
+                }
+            }
         }
     }
 }

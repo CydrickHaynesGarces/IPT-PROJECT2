@@ -1,17 +1,16 @@
-// resources/js/components/DefaultPage.js
 import React from 'react';
-import Header from './Header'; // Import Header component
-import NavList from './NavList';
-import AboutUs from './AboutUs';
-import ContactUs from './ContactUs';
-import Footer from './Footer'; // Import Footer component
-import '../../sass/DefaultPage.scss';
+import Header from '../layout/Header'; // Import Header component
+import NavList from '../layout/NavList'; // Import NavList component
+import AboutUs from './AboutUs'; // Import AboutUs component
+import ContactUs from './ContactUs'; // Import ContactUs component
+import Footer from '../layout/Footer'; // Import Footer component
+import '../../sass/DefaultPage.scss'; // Import SCSS for styling
 
 export default function DefaultPage() {
     return (
         <div className="default-page-container">
-            <Header /> {/* Add Header here */}
-            <NavList /> {/* NavList renders at the top */}
+            <Header />
+            <NavList />
 
             <div id="home" className="main-content">
                 <h1>Welcome to the IPT-PROJECT System</h1>
@@ -30,15 +29,15 @@ export default function DefaultPage() {
                 </div>
             </div>
 
-            <div id="about-us"> {/* Scroll target for About Us */}
+            <div id="about-us">
                 <AboutUs />
             </div>
 
-            <div id="contact-us"> {/* Scroll target for Contact Us */}
+            <div id="contact-us">
                 <ContactUs />
             </div>
 
-            <Footer /> {/* Add Footer component here */}
+            <Footer />
         </div>
     );
 }
